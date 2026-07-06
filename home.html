@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>a</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#121212;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    color:white;
+}
+
+.container{
+    width:92%;
+    max-width:380px;
+    background:#1e1e1e;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(0,0,0,.5);
+    border:1px solid #333;
+}
+
+h2{
+    font-size:24px;
+    margin-bottom:25px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+}
+
+button{
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:active{
+    transform:scale(.95);
+}
+
+.yes{
+    background:#22c55e;
+    color:white;
+}
+
+.no{
+    background:#ef4444;
+    color:white;
+}
+
+.hidden{
+    display:none;
+    margin-top:25px;
+    background:#2b2b2b;
+    border-radius:15px;
+    padding:20px;
+    animation:fade .4s ease;
+}
+
+.hidden h3{
+    margin-bottom:10px;
+}
+
+.hidden p{
+    color:#bbb;
+    font-size:15px;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Still Have Feelings?</h2>
+
+<div class="buttons">
+    <button class="yes" onclick="showYes()">Yes</button>
+    <button class="no" onclick="showNo()">No</button>
+</div>
+
+<div id="yesSection" class="hidden">
+    <h3>Ouw</h3>
+    <p>Thank You pero di nako gusto masakitan pa tika gusto pa tika pero di sako kay kahibaw ko masakitan ra gihapon tika di taga pugson if imo nanang wagtangon imong fellings sako a or not. mas nindot if friends lang sa ta karon and i dont have any chance naman diba so its okay friends lang sa ta❤️‍🩹</p>
+    <br>
+    <p><strong>AMPING</strong></p>
+</div>
+
+<div id="noSection" class="hidden">
+    <h3>Ouw</h3>
+    <p>Its good kay masakitan ra taka we can be friends naman diba its okay na ako masakitan kaysa ikaw keep it up and if you like someone its okay pili a ang tarong ha HAHAHA.</p>
+    <br>
+    <P><STRONG>AMPING</STRONG></P>
+</div>
+<br>
+<p>Keep This Secret Please. This Message Only For You My Suzzane</p>
+</div>
+<script>
+function showYes(){
+    document.getElementById("yesSection").style.display="block";
+    document.getElementById("noSection").style.display="none";
+}
+
+function showNo(){
+    document.getElementById("noSection").style.display="block";
+    document.getElementById("yesSection").style.display="none";
+}
+</script>
+
+</body>
+  </html>
