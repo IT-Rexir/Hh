@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>a</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+}
+
+.card{
+    width:92%;
+    max-width:360px;
+    padding:28px 24px;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    color:#fff;
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+    animation:show .5s ease;
+}
+
+@keyframes show{
+    from{
+        opacity:0;
+        transform:scale(.95) translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+.logo{
+    width:75px;
+    height:75px;
+    margin:auto;
+    margin-bottom:18px;
+    border-radius:50%;
+    background:#2563eb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    font-weight:bold;
+}
+
+h2{
+    text-align:center;
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+p{
+    text-align:center;
+    color:#d1d5db;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    height:48px;
+    padding:0 15px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:rgba(255,255,255,.12);
+    color:#fff;
+    font-size:16px;
+}
+
+input::placeholder{
+    color:#cbd5e1;
+}
+
+button{
+    width:100%;
+    height:48px;
+    margin-top:18px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+
+button:disabled{
+    opacity:.8;
+}
+
+.spinner{
+    width:18px;
+    height:18px;
+    border:3px solid rgba(255,255,255,.35);
+    border-top:3px solid white;
+    border-radius:50%;
+    display:none;
+    animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="logo">∆</div>
+
+    <h2>Welcome</h2>
+    <p>Enter your first name to continue</p>
+
+    <input
+        type="text"
+        id="username"
+        placeholder="Name"
+        autocomplete="off"
+        onkeydown="if(event.key==='Enter')login()">
+
+    <button id="loginBtn" onclick="login()">
+        <span id="btnText">Continue</span>
+        <div class="spinner" id="spinner"></div>
+    </button>
+
+</div>
+
+<script>
+function login(){
+
+    const username=document.getElementById("username").value.trim().toLowerCase();
+
+    const btn=document.getElementById("loginBtn");
+    const text=document.getElementById("btnText");
+    const spinner=document.getElementById("spinner");
+
+    btn.disabled=true;
+    text.textContent="Loading...";
+    spinner.style.display="block";
+
+    setTimeout(function(){
+
+        if(username==="suzzane"){
+            window.location.href="home.html";
+        }else{
+            window.location.href="https://www.facebook.com/";
+        }
+
+    },1800);
+
+}
+</script>
+
+</body>
+</html>
